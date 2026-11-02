@@ -6,7 +6,7 @@
 | README with local setup & run instructions | [README.md](README.md) |
 | Architecture note | [ARCHITECTURE.md](ARCHITECTURE.md) |
 | AI workflow note | [AI_WORKFLOW.md](AI_WORKFLOW.md) |
-| Live product URL | https://ajaia-docs.onrender.com (also at the top of the README) |
+| Live product URL | https://ajaia-docs-w3a2.onrender.com (also at the top of the README) |
 | Walkthrough video URL | [VIDEO_URL.txt](VIDEO_URL.txt) |
 | Screenshots | [docs/screenshots/](docs/screenshots/) |
 | Automated tests | `server/tests/api.test.js` — run with `npm test` |

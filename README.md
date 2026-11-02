@@ -2,11 +2,15 @@
 
 A lightweight, Google Docs–style document editor: create and format documents in the browser, import files, and share documents with other users.
 
-**Live demo:** https://ajaia-docs.onrender.com _(free tier — the first load after ~15 min idle takes ~30–50 s while the server wakes up)_
+**Live demo:** https://ajaia-docs-w3a2.onrender.com _(free tier — the first load after ~15 min idle takes ~30–50 s while the server wakes up)_
 
 **Demo accounts** (password for all: `demo1234`): `alice@demo.com`, `bob@demo.com`, `carol@demo.com` — one-click buttons are on the login page. You can also create your own account.
 
-![Login](docs/screenshots/login.png)
+| Editor | Sharing |
+|---|---|
+| ![Editor](docs/screenshots/editor.png) | ![Share dialog](docs/screenshots/share-dialog.png) |
+| **Document list (Shared with me)** | **Viewer (read-only) access** |
+| ![Shared list](docs/screenshots/doc-list-shared.png) | ![Viewer](docs/screenshots/viewer-readonly.png) |
 
 ## Features
 

@@ -69,10 +69,15 @@ export default function Editor() {
     return () => { cancelled = true; };
   }, [id]);
 
-  // Push loaded content + permissions into the editor.
+  // Push loaded content into the editor ONCE per document. Later `doc` updates (e.g. a rename)
+  // must not call setContent again, or they would overwrite edits typed since the load.
+  const loadedInto = useRef({ editor: null, id: null });
   useEffect(() => {
     if (!editor || !doc) return;
-    editor.commands.setContent(doc.content_html || '', false);
+    if (loadedInto.current.editor !== editor || loadedInto.current.id !== doc.id) {
+      editor.commands.setContent(doc.content_html || '', false);
+      loadedInto.current = { editor, id: doc.id };
+    }
     editor.setEditable(doc.role === 'owner' || doc.role === 'editor');
   }, [editor, doc]);
 

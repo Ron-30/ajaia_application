@@ -23,7 +23,11 @@ This project was built in a single ~1-hour session with **Claude Code** (Anthrop
 
 - Scope control: explicitly chose *not* to build real-time co-editing to stay within the time box.
 - Hosting choice and account setup (GitHub, Render) are human actions.
-- Bugs caught by running the code, not by reading it: the local DB directory wasn't created on first start (fixed in `server/db.js`), and Express 4 doesn't forward async errors (switched to Express 5). Tests and a real smoke run were essential — AI-written code was treated as a draft until verified.
+- Bugs caught by running the code, not by reading it:
+  - The local DB directory wasn't created on first start (fixed in `server/db.js`).
+  - Express 4 doesn't forward async errors to the error handler (switched to Express 5).
+  - **Data-loss bug found by a scripted browser test on the live site:** renaming a document re-ran the "load content into editor" effect and overwrote text typed since opening it. API tests couldn't catch this (it was purely client-side). Fixed by loading content into the editor only once per document (`client/src/pages/Editor.jsx`), then re-verified with the same browser script.
+- Takeaway: AI-written code was treated as a draft until verified by automated tests *and* an end-to-end run in a real browser.
 
 ## Prompts / process notes
 
